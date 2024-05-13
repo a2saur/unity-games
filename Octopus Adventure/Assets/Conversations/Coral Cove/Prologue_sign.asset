@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfedde8c7bb543edb39273c09389de3, type: 3}
+  m_Name: Prologue_sign
+  m_EditorClassIdentifier: 
+  criteriaList:
+  - {fileID: 11400000, guid: 0d1f9df79065a43979778a0500ea04be, type: 2}
+  endActions:
+    m_PersistentCalls:
+      m_Calls: []
+  lines:
+  - --- event gone awry! --- gone!
+  - Just a short while ago, the --- was stolen.
+  - How does one steal a building? Who knows!
+  - Witnesses say that the building was taken by a giant lobster via an evil-looking
+    train.
+  - Many were inside at the time and are presumed kidnapped.
+  - The whereabouts of the building are currently unknown.
+  - We'll post follow-ups on this board as soon as there's more information.
+  npcAttached: {fileID: 0}

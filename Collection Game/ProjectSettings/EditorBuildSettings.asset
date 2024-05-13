@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Opening.unity
+    guid: 8d6cd9c9f8f994fbbb1fe0803329ed00
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: c5c594f8c6ca54cec865b8b700c3aa38
+  - enabled: 1
+    path: Assets/Scenes/TownTest.unity
+    guid: 5fd725440cac84ba3bc287bdace09733
+  - enabled: 1
+    path: Assets/Scenes/ShopScene.unity
+    guid: c57e2e512f10a4de39713a220db4ede0
+  - enabled: 1
+    path: Assets/Scenes/CurrentCreatures.unity
+    guid: 5a08089083c954b4a88a78b2b098c3a9
+  - enabled: 1
+    path: Assets/Scenes/BuyItems.unity
+    guid: dd0c8dde2722740c8b773603ef38fc9f
+  - enabled: 1
+    path: Assets/Scenes/Houses/CeleryHouse.unity
+    guid: ab901e8a8d0674ed88c1215cc0986875
+  - enabled: 1
+    path: Assets/Scenes/Houses/SwanHouse.unity
+    guid: 472e81ec9c6784b88915d9725a1ab1e6
+  - enabled: 1
+    path: Assets/Scenes/Houses/SnorHouse.unity
+    guid: 1d0c9eb1b4c134903a6c798990310d55
+  - enabled: 1
+    path: Assets/Scenes/SkyWorld.unity
+    guid: e852d17fe10b144479a43e638f32097d
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: bd6f07627985646599e8c6fe0d95ddf0
+  - enabled: 1
+    path: Assets/Scenes/SkyShop.unity
+    guid: 1d327822c143c4343bf75d4150de1a4e
+  - enabled: 1
+    path: Assets/Scenes/Houses/BeeeHouse.unity
+    guid: c14442a44c7e34c89860309cbaa9b571
+  - enabled: 1
+    path: Assets/Scenes/Houses/BobHouse.unity
+    guid: da19900c6d26a4533973dfc3216d706c
+  - enabled: 1
+    path: Assets/Scenes/Houses/GardoraHouse.unity
+    guid: 44ab192916de44edda4070d2eda2cbb0
+  - enabled: 1
+    path: Assets/Scenes/Houses/KipHouse.unity
+    guid: ad8275f66578e461fae368a4223e0145
+  - enabled: 1
+    path: Assets/Scenes/Houses/LeekHouse.unity
+    guid: 830229c989c66422ab13837b63a4c4e1
+  - enabled: 1
+    path: Assets/Scenes/Houses/PanpoHouse.unity
+    guid: 7dc706576318148c7885e40b6305f00e
+  - enabled: 1
+    path: Assets/Scenes/Houses/SaffiHouse.unity
+    guid: 5638cab1f64b4423e846b1849095c025
+  - enabled: 1
+    path: Assets/Scenes/SkyShopTravel.unity
+    guid: ebe6a86564b5d4c569647f9860c1b31e
+  m_configObjects: {}
