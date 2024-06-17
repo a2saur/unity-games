@@ -5,6 +5,7 @@ using UnityEngine;
 public class SettingsManager : MonoBehaviour
 {
     public static bool pauseScreen = false;
+    public static Inventory inventory = new Inventory();
     
     // public static KeyCode rightArrow = KeyCode.RightArrow;
     // public static KeyCode leftArrow = KeyCode.LeftArrow;
@@ -89,6 +90,19 @@ public class SettingsManager : MonoBehaviour
         {KeyCode.Equals, "="},
     };
 
+    public static Dictionary<string, bool> criteriasSpecific = new Dictionary<string, bool>(){
+        {"bobaMinigame", false},
+    };
+
+    public static int chapter;
+    public static bool playing = true;
+
+    public static float interactableDist = 5f;
+    public static float defaultTextSpeed = 0.05f;
+    public static float jumpSpeed = 7f;
+
+    public static List<string> enemiesSeen = new List<string>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,5 +113,34 @@ public class SettingsManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public static bool hasItem(string itemName){
+        // for (int i = 0; i < items.Length; i++){
+        //     if (items[i].GetName() == itemName){
+        //         return true;
+        //     }
+        // }
+        return false;
+    }
+
+    public static bool specificCriteria(string criteriaName){
+        return criteriasSpecific[criteriaName];
+    }
+
+    public static int GetChapter(){
+        return chapter;
+    }
+
+    public static void Pause(){
+        playing = false;
+    }
+
+    public static void Resume(){
+        playing = true;
+    }
+
+    public static void setSpecificCriteria(string criteriaName){
+        criteriasSpecific[criteriaName] = true;
     }
 }

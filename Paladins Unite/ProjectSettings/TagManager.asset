@@ -7,9 +7,9 @@ TagManager:
   - SettingsManager
   - BaseButton
   - ControlButton
-  - OptionButton
-  - ControlScreen
-  - OptionScreen
+  - UltimateWheel
+  - MESSAGEMANAGER
+  - NPC
   layers:
   - Default
   - TransparentFX
