@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: bg-default
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: 4771eb5cd7d554875b943fcb5f38ad2c, type: 3}
+  - {fileID: 21300000, guid: 00d39313b379e4a2ca7e96105d2ab6a7, type: 3}
+  - {fileID: 21300000, guid: b3b670a8d744c46a383f84f155f12f3c, type: 3}
+  - {fileID: 21300000, guid: bdf9d5c0f5bf14052b7cbbae8927ae75, type: 3}
+  - {fileID: 21300000, guid: 3e19aca2c9f2145eeabbc0084d3fa1f9, type: 3}
+  - {fileID: 21300000, guid: 2c783b8ee57f94398becd9d0a6b0afca, type: 3}
+  - {fileID: 21300000, guid: 41e7fecb113104aeeb6a2394dd730276, type: 3}
+  m_MinSpeed: 7
+  m_MaxSpeed: 7
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
