@@ -31,7 +31,7 @@ public class SettingsManager : MonoBehaviour
 	};
 
     public static float moveSpeed = 4f; // Movement speed for main char
-    public static float lilMoveSpeed = 2f; // Movement speed for lil guys
+    public static float lilMoveSpeed = 3f; // Movement speed for lil guys
     public static float defaultTextSpeed = 0.1f;
     public static float thresholdInteractDist = 2f;
     public static bool groupingItems = true;

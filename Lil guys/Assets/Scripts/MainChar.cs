@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainChar : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Vector3 velocity = new Vector3(0, 0, 0);
 
     private Vector2 movement;
 
@@ -37,7 +38,6 @@ public class MainChar : MonoBehaviour
             }
 
             movement.Normalize(); // Prevent faster diagonal movement
-
         }
     }
 
@@ -46,6 +46,9 @@ public class MainChar : MonoBehaviour
         if (SettingsManager.playing){
             // Move the player
             rb.linearVelocity = movement * SettingsManager.moveSpeed;
+            velocity = movement * SettingsManager.moveSpeed;
+        } else {
+            velocity = new Vector3(0, 0, 0);
         }
     }
 

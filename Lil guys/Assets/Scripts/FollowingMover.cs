@@ -22,19 +22,19 @@ public class FollowingMover : MonoBehaviour
     void Update()
     {
         if (moving){
-            waitingTime += Time.deltaTime;
-            if (waitingTime > 0.5f){
-                if (Vector3.Distance(prevPos, transform.position) < moveSpeed/10){
-                    // hasn't moved
-                    moving = false;
-                } else {
-                    waitingTime = 0;
-                    prevPos = transform.position;
-                }
-            }
+            // waitingTime += Time.deltaTime;
+            // if (waitingTime > 0.5f){
+            //     if (Vector3.Distance(prevPos, transform.position) < moveSpeed/10){
+            //         // hasn't moved
+            //         moving = false;
+            //     } else {
+            //         waitingTime = 0;
+            //         prevPos = transform.position;
+            //     }
+            // }
 
             Vector3 toTarget = (targetPos - transform.position).normalized;
-            Vector3 sideStepForce = (Vector3) Vector2.Perpendicular((Vector2) toTarget).normalized * 0.5f;
+            // Vector3 sideStepForce = (Vector3) Vector2.Perpendicular((Vector2) toTarget).normalized * 0.5f;
 
             Vector3 center = transform.position;
             
@@ -50,16 +50,24 @@ public class FollowingMover : MonoBehaviour
                 }
             }
 
-            Vector3 movementDirection = (toTarget + sideStepForce + avoidanceForce).normalized;
-
-            if (Mathf.Abs(movementDirection.magnitude) < 0.05f){
-                Vector3 side = Vector2.Perpendicular(movementDirection);
+            Vector3 movementDirection = (toTarget + avoidanceForce).normalized;
+            if (Physics.Raycast(transform.position, movementDirection, radius)){
+                // vector cast hits
+                Vector3 side = Vector2.Perpendicular(movementDirection).normalized;
                 movementDirection = (movementDirection + side * 0.5f).normalized;
+                transform.position += (movementDirection * moveSpeed * Time.deltaTime);
             } else {
                 transform.position += (movementDirection * moveSpeed * Time.deltaTime);
             }
 
-            transform.position += (movementDirection * moveSpeed * Time.deltaTime);
+            // if (Mathf.Abs(movementDirection.magnitude) < 0.05f){
+            //     Vector3 side = Vector2.Perpendicular(movementDirection).normalized;
+            //     movementDirection = (movementDirection + side * 0.5f).normalized;
+            //     transform.position += (movementDirection * moveSpeed * Time.deltaTime);
+            // } else {
+            //     transform.position += (movementDirection * moveSpeed * Time.deltaTime);
+            // }
+
 
             if (Vector3.Distance(transform.position, targetPos) < offset) {
                 moving = false;

@@ -6,6 +6,7 @@ public class LilGuy : MonoBehaviour
 {
     public int mode = 1; // idle, following, path
     public Vector3 followSpot;
+    public Vector3 prevSpot;
     public GameObject player;
     private float bufferDist = 2.5f;
     private FollowingMover followController;
@@ -17,6 +18,7 @@ public class LilGuy : MonoBehaviour
         followController.SetOffset(bufferDist);
         player = GameObject.FindWithTag("Player");
         followSpot = player.transform.position;
+        prevSpot = player.transform.position;
     }
 
     // Update is called once per frame
@@ -32,7 +34,8 @@ public class LilGuy : MonoBehaviour
                 followController.UpdateTargetPos(followSpot);
                 
                 if (Vector3.Distance(followSpot, player.transform.position) > bufferDist){
-                    followSpot = player.transform.position;
+                    followSpot = prevSpot;
+                    prevSpot = player.transform.position;
                 }
                 
             } else {
