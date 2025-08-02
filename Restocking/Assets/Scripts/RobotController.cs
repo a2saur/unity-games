@@ -36,8 +36,8 @@ public class RobotController : MonoBehaviour
         spriteRenderer.color = new Color(0.5f, 0.5f, 0.5f);
         instructions = new List<int>();
 
-        restartButton.onClick.AddListener(Restart);
-        goButton.onClick.AddListener(Go);
+        // restartButton.onClick.AddListener(Restart);
+        // goButton.onClick.AddListener(Go);
 
         moves = new Vector3[4];
         moves[0] = new Vector3(0, -1, 0);

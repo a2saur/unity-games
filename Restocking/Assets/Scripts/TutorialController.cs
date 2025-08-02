@@ -77,7 +77,7 @@ public class TutorialController : MonoBehaviour
                         }
                     }
                 } else if (currentSpot == 1){
-                    if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow)){
+                    if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow)){
                         steps[currentSpot].SetActive(false);
                         if (currentSpot+1 < steps.Length){
                             currentSpot++;

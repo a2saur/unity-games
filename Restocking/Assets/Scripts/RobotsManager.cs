@@ -13,7 +13,6 @@ public class RobotsManager : MonoBehaviour
     {
         // recording = true;
         selectedRobot = -1;
-        // Restart();
     }
 
     // Update is called once per frame
@@ -61,7 +60,7 @@ public class RobotsManager : MonoBehaviour
                 go = true;
             }
         }
-
+        
         if (go){
             for (int i = 0; i < robots.Length; i++){
                 robots[i].Go();
