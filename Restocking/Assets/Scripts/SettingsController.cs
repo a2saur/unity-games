@@ -15,16 +15,21 @@ public class SettingsController : MonoBehaviour
     public TMP_Text soundCounter;
     public TMP_Text speedCounter;
     public string menuSelection = "Main menu";
+    public string[] levelSceneNames;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    // void Awake()
+    // {
+    //     DontDestroyOnLoad(this.gameObject);
+    // }
 
     void Start(){
-        musicSlider.value = SettingsManager.musicVolume/10;
-        soundSlider.value = SettingsManager.soundVolume/10;
-        speedSlider.value = SettingsManager.robotSpeed/10;
+        musicSlider.value = ((float) SettingsManager.musicVolume)/10;
+        soundSlider.value = ((float) SettingsManager.soundVolume)/10;
+        speedSlider.value = ((float) SettingsManager.robotSpeed)/10;
+
+        musicCounter.text = SettingsManager.musicVolume.ToString();
+        soundCounter.text = SettingsManager.soundVolume.ToString();
+        speedCounter.text = SettingsManager.robotSpeed.ToString();
 
         mainMenuPanel.SetActive(false);
         levelSelectPanel.SetActive(false);
@@ -68,11 +73,21 @@ public class SettingsController : MonoBehaviour
         SettingsManager.Pause();
         menuSelection = "Main menu";
         mainMenuPanel.SetActive(true);
+        musicSlider.value = ((float) SettingsManager.musicVolume)/10;
+        soundSlider.value = ((float) SettingsManager.soundVolume)/10;
+        speedSlider.value = ((float) SettingsManager.robotSpeed)/10;
+        musicCounter.text = SettingsManager.musicVolume.ToString();
+        soundCounter.text = SettingsManager.soundVolume.ToString();
+        speedCounter.text = SettingsManager.robotSpeed.ToString();
         levelSelectPanel.SetActive(false);
     }
 
     public void SwitchToScene(int sceneNum){
+        SceneManager.LoadScene(levelSceneNames[sceneNum]);
+    }
 
+    public void SwitchToSceneByName(string sceneName){
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Quit(){

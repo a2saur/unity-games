@@ -6,6 +6,7 @@ using UnityEngine;
 public class SettingsManager : MonoBehaviour
 {
     public static bool playing = true;
+    public static bool dialogueOff = true;
     public static int musicVolume = 7;
     public static int soundVolume = 7;
     public static int robotSpeed = 5;

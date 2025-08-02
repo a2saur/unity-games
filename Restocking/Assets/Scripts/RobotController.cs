@@ -7,6 +7,7 @@ public class RobotController : MonoBehaviour
     public Button restartButton;
     public Button goButton;
     public InstructionDisplayController IDC;
+    public LevelCompletionManager LCM;
     public int robotID;
 
     public int lastDirection = 0;
@@ -51,7 +52,7 @@ public class RobotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SettingsManager.playing){
+        if (SettingsManager.playing && SettingsManager.dialogueOff){
             if (recording){
                 if (selected){
                     if (instructions.Count < 5){
@@ -107,9 +108,9 @@ public class RobotController : MonoBehaviour
                         transform.position = nextPosition;
                         CheckPickUpDropOff();
 
-                        wait = 1-(SettingsManager.robotSpeed/10);
+                        wait = 1.1f-(((float) SettingsManager.robotSpeed)/10.0f);
                         if (wait == 0){
-                            wait = 0.05f;
+                            wait = 0.1f;
                         }
                         currentInstructionIdx++;
                         if (currentInstructionIdx >= instructions.Count){
@@ -138,6 +139,7 @@ public class RobotController : MonoBehaviour
     public void Restart(){
         recording = true;
         lastDirection = 0;
+        holdingBox = false;
         CheckPickUpDropOff();
 
         animator.SetInteger("Direction", lastDirection);
@@ -191,12 +193,14 @@ public class RobotController : MonoBehaviour
                 break;
             }
         }
+
         // TODO check if on drop-off point
         GameObject[] dropoffSpots = GameObject.FindGameObjectsWithTag("Drop-off");
         for (int i = 0; i < dropoffSpots.Length; i++){
             if (dropoffSpots[i].GetComponent<Collider2D>().OverlapPoint(transform.position)){
                 // grab package
                 holdingBox = false;
+                LCM.DroppedOffBox();
                 break;
             }
         }

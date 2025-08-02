@@ -55,8 +55,17 @@ public class RobotsManager : MonoBehaviour
     }
 
     public void Go(){
+        bool go = false;
         for (int i = 0; i < robots.Length; i++){
-            robots[i].Go();
+            if (robots[i].instructions.Count > 0){
+                go = true;
+            }
+        }
+
+        if (go){
+            for (int i = 0; i < robots.Length; i++){
+                robots[i].Go();
+            }
         }
     }
 
