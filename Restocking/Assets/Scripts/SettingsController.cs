@@ -48,6 +48,10 @@ public class SettingsController : MonoBehaviour
                 speedCounter.text = SettingsManager.robotSpeed.ToString();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            ToggleSettings();
+        }
     }
 
     public void ToggleSettings(){
@@ -83,10 +87,12 @@ public class SettingsController : MonoBehaviour
     }
 
     public void SwitchToScene(int sceneNum){
+        SettingsManager.Resume();
         SceneManager.LoadScene(levelSceneNames[sceneNum]);
     }
 
     public void SwitchToSceneByName(string sceneName){
+        SettingsManager.Resume();
         SceneManager.LoadScene(sceneName);
     }
 

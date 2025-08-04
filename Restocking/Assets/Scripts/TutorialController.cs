@@ -53,7 +53,7 @@ public class TutorialController : MonoBehaviour
         if (SettingsManager.playing){
             if (currentSpot == -1){
                 if (running){
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)){
+                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)){
                         if (dialogueTextBox.text == dialogue[idx]){
                             NextLine();
                         } else {
@@ -84,7 +84,7 @@ public class TutorialController : MonoBehaviour
                             steps[currentSpot].SetActive(true);
                         }
                     }
-                } else if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)){
+                } else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)){
                     steps[currentSpot].SetActive(false);
                     if (currentSpot+1 < steps.Length){
                         currentSpot++;
